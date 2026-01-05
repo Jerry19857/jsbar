@@ -1,0 +1,14 @@
+#!/usr/bin/env lua
+
+-- SketchyBar Configuration Entry Point (Lua-based)
+-- This configuration combines the zen/minimal style from sbar-zen
+-- with the aerospace socket connection and icon system from sbar-sws
+
+-- Get the directory of this script
+local config_dir = os.getenv("CONFIG_DIR") or (os.getenv("HOME") .. "/.config/sketchybar")
+
+-- Add config directory to Lua path
+package.path = config_dir .. "/?.lua;" .. package.path
+
+-- Run the initialization
+require("init")
