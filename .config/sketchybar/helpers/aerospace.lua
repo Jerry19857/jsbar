@@ -86,13 +86,18 @@ function Aerospace:query_workspaces()
 end
 
 -- Get current mode (main/service)
-function Aerospace:list_modes()
-    -- AeroSpace doesn't have a direct mode query, but we can infer from config
-    -- For now, return a default mode structure
+-- NOTE: AeroSpace doesn't currently provide a direct CLI command to query the current mode.
+-- This returns a default structure. Mode changes should be tracked via event triggers.
+function Aerospace:get_mode_stub()
     return {
         current = "main",
         available = {"main", "service"}
     }
+end
+
+-- Deprecated: Use get_mode_stub() instead
+function Aerospace:list_modes()
+    return self:get_mode_stub()
 end
 
 -- Get focused window

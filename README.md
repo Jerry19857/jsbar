@@ -44,8 +44,12 @@ Before installing, you need:
 
 1. **Clone this repository**:
    ```bash
-   git clone https://github.com/Jerry19857/jsbar.git
+   # Clone your fork or the original repository
+   git clone https://github.com/YOUR_USERNAME/jsbar.git
    cd jsbar
+   
+   # Or use the automated install script:
+   ./install.sh
    ```
 
 2. **Copy configuration files**:

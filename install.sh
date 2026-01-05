@@ -49,10 +49,13 @@ else
 fi
 
 # Check for Nerd Font (optional but recommended)
-if ! fc-list 2>/dev/null | grep -qi "nerd" && ! system_profiler SPFontsDataType 2>/dev/null | grep -qi "nerd"; then
-    echo -e "${YELLOW}⚠ Nerd Font not detected (recommended but optional)${NC}"
-else
+has_nerd_font_fc=$(fc-list 2>/dev/null | grep -qi "nerd" && echo "yes" || echo "no")
+has_nerd_font_sys=$(system_profiler SPFontsDataType 2>/dev/null | grep -qi "nerd" && echo "yes" || echo "no")
+
+if [[ "$has_nerd_font_fc" == "yes" ]] || [[ "$has_nerd_font_sys" == "yes" ]]; then
     echo -e "${GREEN}✓ Nerd Font detected${NC}"
+else
+    echo -e "${YELLOW}⚠ Nerd Font not detected (recommended but optional)${NC}"
 fi
 
 echo

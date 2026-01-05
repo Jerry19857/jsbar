@@ -96,14 +96,22 @@ f = ['layout floating tiling', 'mode main']
 backspace = ['close-all-windows-but-current', 'mode main']
 
 # Workspace to monitor mapping (customize based on your setup)
-[[on-window-detected]]
-if.app-id = 'com.apple.Terminal'
-run = 'move-node-to-workspace 1'
+# OPTIONAL: Comment out or modify these rules to match your preferences
+# These are example assignments - adjust app-id values for your workflow
 
-[[on-window-detected]]
-if.app-id = 'com.google.Chrome'
-run = 'move-node-to-workspace 2'
+# Example: Terminal apps to workspace 1
+#[[on-window-detected]]
+#if.app-id = 'com.apple.Terminal'
+#run = 'move-node-to-workspace 1'
 
-[[on-window-detected]]
-if.app-id = 'com.microsoft.VSCode'
-run = 'move-node-to-workspace 3'
+# Example: Web browsers to workspace 2
+#[[on-window-detected]]
+#if.app-id = 'com.google.Chrome'
+#run = 'move-node-to-workspace 2'
+
+# Example: Code editors to workspace 3
+#[[on-window-detected]]
+#if.app-id = 'com.microsoft.VSCode'
+#run = 'move-node-to-workspace 3'
+
+# To find app IDs: osascript -e 'id of app "AppName"'
